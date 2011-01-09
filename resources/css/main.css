@@ -1,0 +1,29 @@
+* {
+    font-family: verdana;
+    color: black;
+    text-shadow: 1px 1px 2px #bbb;
+}
+
+div#content {
+    width: 1000px;
+    margin: auto auto;
+}
+
+div.header {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+div.footer {
+    border-top: 1px solid black;
+    width: 100%;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+div.footer a {
+    margin-right: 15px;
+}
+

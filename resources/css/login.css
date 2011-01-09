@@ -1,0 +1,25 @@
+div#err {
+    color: red;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+table#login {
+    margin: 50px auto;
+    border: 0;
+}
+
+table#login td {
+    font-size: 90%;
+    font-weight: bold;
+    width: 50px;
+}
+
+table#login td#button {
+    text-align: right;
+}
+
+input[type="text"], input[type="password"] {
+    width: 300px;
+}

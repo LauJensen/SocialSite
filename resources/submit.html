@@ -1,0 +1,33 @@
+<body>
+  <table id="submission">
+    <tr>
+      <td>Title</td>
+      <td><input type="text" name="title"/></td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><input type="text" name="url"/></td>
+    </tr>
+    <tr>
+      <td id="button" colspan="2">
+        <button id="submit">Submit</button>
+      </td>
+    </tr>
+  </table>
+
+  <script type="text/javascript">
+    $(function() {
+        $("button#submit").click(function() {
+            $.ajax({url: "/submit", type: "POST", data: $(":input").serialize(),
+                    success: function(data) {
+                        if (data.indexOf("OK") != -1) {
+                            window.location.href = "/";
+                        } else {
+                            alert("An error occured while submitting!");
+                        }
+                    }
+                   });
+        });
+    });
+  </script>
+</body>

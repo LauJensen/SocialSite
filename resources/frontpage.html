@@ -1,0 +1,44 @@
+<body>
+  <div class="post">
+    <div class="voting">
+      <div class="upvote">
+        <img src="/images/up.png"/>
+      </div>
+      <div class="votes"/>
+      <div class="downvote">
+        <img src="/images/down.png"/>
+      </div>
+    </div>
+    <div class="title"/>
+    <div class="submitter"/>
+  </div>
+
+  <script type="text/javascript">
+    function vote(id, uri, output) {
+        $.ajax({url: uri, type: 'POST', data: {id: id},
+                success: function(data) {
+                    if (data.substring(0, 2) == "OK") {
+                        $(output).html(data.substring(4));
+                    } else {
+                        Alert("Your vote could not be submitted");
+                    }
+                }
+               });
+    }
+
+    function attach_voter(objs, dir) {
+        $(objs + ' img').each(function() {
+            $(this).click(function() {
+                vote($(this).parent().parent().attr("pid"),
+                     dir,
+                     $(this).parent().parent().find("div.votes"));
+            }).css("cursor", "pointer");
+        });
+    }
+
+    $(function() {
+        attach_voter("div.upvote", "/vote/up");
+        attach_voter("div.downvote", "/vote/down");
+    });
+  </script>
+</body>

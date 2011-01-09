@@ -1,0 +1,18 @@
+table#submission {
+    margin: 50px auto;
+    border: 0;
+}
+
+table#submission td {
+    font-size: 90%;
+    font-weight: bold;
+    width: 50px;
+}
+
+table#submission td#button {
+    text-align: right;
+}
+
+input[type="text"] {
+    width: 300px;
+}
